@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deposit_regexes",
+  "info": {
+    "name": "Deposit Regex"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "regex": {
+      "type": "string",
+      "required": true
+    },
+    "organization": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

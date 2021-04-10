@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "withdraws",
+  "info": {
+    "name": "withdraws"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "date": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

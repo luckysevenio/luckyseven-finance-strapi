@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/withdraws",
+      "handler": "withdraws.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/withdraws/count",
+      "handler": "withdraws.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/withdraws/:id",
+      "handler": "withdraws.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/withdraws",
+      "handler": "withdraws.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/withdraws/:id",
+      "handler": "withdraws.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/withdraws/:year/:month/",
+      "handler": "withdraws.getAll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/withdraws/:id",
+      "handler": "withdraws.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

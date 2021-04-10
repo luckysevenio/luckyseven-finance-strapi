@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deposit-regexes",
+      "handler": "deposit-regex.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-regexes/count",
+      "handler": "deposit-regex.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-regexes/:id",
+      "handler": "deposit-regex.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deposit-regexes",
+      "handler": "deposit-regex.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deposit-regexes/:id",
+      "handler": "deposit-regex.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deposit-regexes/:id",
+      "handler": "deposit-regex.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
