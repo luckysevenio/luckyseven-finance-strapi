@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "deposit_regexes",
   "info": {
-    "name": "Deposit Regex"
+    "name": "Deposit Regex",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,6 +17,10 @@
     },
     "organization": {
       "type": "string",
+      "required": true
+    },
+    "owner": {
+      "type": "email",
       "required": true
     }
   }

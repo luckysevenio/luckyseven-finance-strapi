@@ -18,6 +18,7 @@
   "dependencies": {
     "fintoc": "^0.1.0",
     "knex": "0.21.18",
+    "moment": "^2.29.1",
     "sqlite3": "5.0.0",
     "strapi": "3.5.4",
     "strapi-admin": "3.5.4",

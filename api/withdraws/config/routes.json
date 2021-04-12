@@ -42,8 +42,16 @@
     },
     {
       "method": "GET",
-      "path": "/withdraws/:year/:month/",
-      "handler": "withdraws.getAll",
+      "path": "/withdraws/:year/:month",
+      "handler": "withdraws.findByDate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/withdraws/results/:year/:month",
+      "handler": "withdraws.getMonthResult",
       "config": {
         "policies": []
       }
