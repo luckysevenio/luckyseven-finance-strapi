@@ -1,0 +1,68 @@
+  {
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user-addresses",
+      "handler": "user-addresses.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-addresses/count",
+      "handler": "user-addresses.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-addresses/:id",
+      "handler": "user-addresses.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-addresses",
+      "handler": "user-addresses.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-addresses/:id",
+      "handler": "user-addresses.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/user-addresses/:id",
+      "handler": "user-addresses.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-addresses/find/:user",
+      "handler": "user-addresses.findOneUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-addresses/update/:user",
+      "handler": "user-addresses.updateUserAddress",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
