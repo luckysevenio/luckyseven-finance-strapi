@@ -62,6 +62,14 @@
       "handler": "user-addresses.updateUserAddress",
       "config": {
         "policies": []
+      }  
+    },
+    {
+      "method": "GET",
+      "path": "/user-addresses/getBalances/:user",
+      "handler": "user-addresses.getBalances",
+      "config": {
+        "policies": []
       }
     }
   ]
