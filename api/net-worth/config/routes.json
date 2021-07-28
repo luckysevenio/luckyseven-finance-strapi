@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/net-worths",
+      "handler": "net-worth.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/net-worths/count",
+      "handler": "net-worth.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/net-worths/:id",
+      "handler": "net-worth.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/net-worths",
+      "handler": "net-worth.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/net-worths/:id",
+      "handler": "net-worth.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/net-worths/:id",
+      "handler": "net-worth.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/net-worth/last/getLast",
+      "handler": "net-worth.findLast",
+      "config":{
+        "policies":[]
+      }
+    }
+  ]
+}
