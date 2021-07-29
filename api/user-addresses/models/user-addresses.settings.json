@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_addresses",
+  "info": {
+    "name": "User Addresses",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "private": true,
+      "required": true,
+      "unique": true
+    },
+    "Addresses": {
+      "type": "json"
+    }
+  }
+}

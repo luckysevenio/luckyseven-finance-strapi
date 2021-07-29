@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "net_worths",
+  "info": {
+    "name": "Net worth"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Balance": {
+      "type": "biginteger"
+    }
+  }
+}

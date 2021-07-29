@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "results",
+  "info": {
+    "name": "Results_s",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ResultState": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    }
+  }
+}
