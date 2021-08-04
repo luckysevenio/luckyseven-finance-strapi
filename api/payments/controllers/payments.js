@@ -8,7 +8,7 @@
 module.exports = {
     List: async (ctx) => {
         const { user } = ctx.params;
-        const List = await strapi.query('payments').find({Mail: user, _sort: 'Year:desc' });
+        const List = await strapi.query('payments').find({Owner: user, _sort: 'Year:desc' });
         List.sort((a, b) => {
             if ((a.Month <= b.Month)&&(a.Year <= b.Year)){
                 return 1

@@ -4,8 +4,9 @@
  */
 
 module.exports = {
-  findLast: async () => {
-    const last = await strapi.query('results').search({ _q: 'my search query', _limit: 1, _sort: 'published_at:desc' });
+  findLast: async (ctx) => {
+    const { user } = ctx.params;
+    const last = await strapi.query('results').find({ Owner: user, _limit: 1, _sort: 'published_at:desc' });
     return last;
   },
 };

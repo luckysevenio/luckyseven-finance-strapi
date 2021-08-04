@@ -15,6 +15,10 @@
       "type": "biginteger",
       "default": "0",
       "required": true
+    },
+    "Owner": {
+      "type": "email",
+      "required": true
     }
   }
 }

@@ -4,15 +4,13 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'mongoose',
       settings: {
-        host: env('DATABASE_HOST', ''),
+        uri: env('MONGO_URI'),
         srv: env.bool('DATABASE_SRV', false),
         port: env.int('DATABASE_PORT', 27017),
-        database: env('DATABASE_NAME', 'l7finance'),
-        username: env('DATABASE_USERNAME', ''),
-        password: env('DATABASE_PASSWORD', ''),
+        database: env('DATABASE_NAME'),
       },
       options: {
-        authenticationDatabase: env('AUTHENTICATION_DATABASE', null),
+        authenticationDatabase: env('AUTHENTICATION_DATABASE', 'admin'),
         ssl: env.bool('DATABASE_SSL', false),
       },
     },

@@ -50,7 +50,7 @@
     },
     {
       "method": "GET",
-      "path": "/results/last/getLast",
+      "path": "/results/last/getLast/:user",
       "handler": "results.findLast",
       "config":{
         "policies":[]

@@ -18,8 +18,9 @@
     "Month": {
       "type": "integer"
     },
-    "Mail": {
-      "type": "email"
+    "Owner": {
+      "type": "email",
+      "required": true
     },
     "Amount": {
       "type": "biginteger"

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "net_worths",
   "info": {
-    "name": "Net worth"
+    "name": "Net worth",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,6 +13,10 @@
   "attributes": {
     "Balance": {
       "type": "biginteger"
+    },
+    "Owner": {
+      "type": "email",
+      "required": true
     }
   }
 }

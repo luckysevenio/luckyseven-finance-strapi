@@ -50,7 +50,7 @@
     },
     {
       "method": "GET",
-      "path": "/net-worth/last/getLast",
+      "path": "/net-worth/last/getLast/:user",
       "handler": "net-worth.findLast",
       "config":{
         "policies":[]
