@@ -5,4 +5,10 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+    findByOwner: async (ctx)=>{
+        const { owner } = ctx.params;
+        const regexes = await strapi.query('deposit-regex').find({owner: owner, _sort: 'published_at:desc'})
+        return regexes;
+    }
+};

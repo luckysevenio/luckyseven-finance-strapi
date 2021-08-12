@@ -15,10 +15,6 @@
       "type": "string",
       "required": true
     },
-    "organization": {
-      "type": "string",
-      "required": true
-    },
     "owner": {
       "type": "email",
       "required": true

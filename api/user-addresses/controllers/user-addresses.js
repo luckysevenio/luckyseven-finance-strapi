@@ -10,7 +10,7 @@ const { URL_B_ZAP , ZAPPER_API_KEY } = process.env;
 module.exports = {
   findOneUser: async (ctx) => {
     const { user } = ctx.params;
-    const info = await strapi.query('user-addresses').findOne({ email: user });
+    const info = await strapi.query('user-addresses').findOne({ Owner: user });
     return info;
   },
   updateUserAddress: async (ctx) => {
@@ -18,7 +18,7 @@ module.exports = {
   },
   getBalances: async (ctx) =>{
     const { user } = ctx.params;
-    const info = await strapi.query('user-addresses').findOne({ email: user });
+    const info = await strapi.query('user-addresses').findOne({ Owner: user });
     let url_addresses = '';
     info.Addresses.forEach(element => {
       url_addresses+=`addresses%5B%5D=${element}&`
