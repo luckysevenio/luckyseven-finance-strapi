@@ -42,4 +42,19 @@ module.exports = {
       amount: r.amount + movement.amount,
     }), { amount: null });
   },
+  findByRegex: async (ctx) => {
+    const { regex } = ctx.params;
+    const bancoChileLink = await client.getLink(FINTOC_BANCO_CHILE_LINK);
+    const bancoChileAccount = bancoChileLink.find({ type_: 'checking_account' });
+    const movements = await bancoChileAccount.getMovements({ since, until, per_page: 300 });
+    const filteredMovements = movements.reduce(
+      (r, movement) => {
+        if (movement.description === regex) {
+          r.push(movement);
+        }
+        return r;
+      }, [],
+    );
+    return movements;
+  }
 };

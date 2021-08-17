@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-regexes/findAll/:regex",
+      "handler": "deposit-regex.findByRegex",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
