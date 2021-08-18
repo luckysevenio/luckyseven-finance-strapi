@@ -58,7 +58,7 @@
     },
     {
       "method": "GET",
-      "path": "/withdraws/find/:regex",
+      "path": "/withdraws/find/regex/:regex",
       "handler": "withdraws.findByRegex",
       "config": {
         "policies": []

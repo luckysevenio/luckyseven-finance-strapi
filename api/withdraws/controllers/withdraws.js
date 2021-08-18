@@ -46,7 +46,7 @@ module.exports = {
     const { regex } = ctx.params;
     const bancoChileLink = await client.getLink(FINTOC_BANCO_CHILE_LINK);
     const bancoChileAccount = bancoChileLink.find({ type_: 'checking_account' });
-    const movements = await bancoChileAccount.getMovements({ since, until, per_page: 300 });
+    const movements = await bancoChileAccount.getMovements({ per_page: 300 });
     const filteredMovements = movements.reduce(
       (r, movement) => {
         if (movement.description === regex) {
@@ -55,6 +55,6 @@ module.exports = {
         return r;
       }, [],
     );
-    return movements;
+    return filteredMovements;
   }
 };
