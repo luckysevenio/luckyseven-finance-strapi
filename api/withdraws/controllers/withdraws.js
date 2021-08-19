@@ -50,7 +50,7 @@ module.exports = {
     const filteredMovements = movements.reduce(
       (r, movement) => {
         if (movement.description === regex) {
-          r.push(movement);
+          r.push({...movement});
         }
         return r;
       }, [],
