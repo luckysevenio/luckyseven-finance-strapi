@@ -57,6 +57,14 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/withdraws/find/regex/:regex",
+      "handler": "withdraws.findByRegex",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "DELETE",
       "path": "/withdraws/:id",
       "handler": "withdraws.delete",

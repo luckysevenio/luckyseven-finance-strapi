@@ -47,6 +47,22 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-regexes/find/:owner",
+      "handler": "deposit-regex.findByOwner",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deposit-regexes/findAll/:regex",
+      "handler": "deposit-regex.findByRegex",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
