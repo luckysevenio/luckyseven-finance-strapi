@@ -65,6 +65,22 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/withdraws/find/user/:user",
+      "handler": "withdraws.findByUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/withdraws/results/by/user/:user",
+      "handler": "withdraws.resultByUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "DELETE",
       "path": "/withdraws/:id",
       "handler": "withdraws.delete",
