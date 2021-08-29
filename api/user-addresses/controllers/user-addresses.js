@@ -25,21 +25,19 @@ module.exports = {
     });
     const url = `${URL_B_ZAP}protocols/balances/supported?${url_addresses}&api_key=${ZAPPER_API_KEY}`
     const balances = await axios.get(url)
-    const promises = (balances.data).map((bal,i)=>{
-      const {network,protocols}  = bal
-      for (let index = 0; index < protocols.length; index++) {
+    const {data}= balances
+    const promises = new Array
+    for (let dex = 0; dex < data.length; dex++){
+      const {network,protocols}  = data[dex]
+      for (let index = 0; index < protocols.length; index++){
         const element = protocols[index];
         //for protocol in protocols
-        promises.push(`${URL_B_ZAP}protocols/${element.protocol}/balances/?${url_addresses}network=${network}&api_key=${ZAPPER_API_KEY}`)
-        console.log(promises);
-        return promises 
-        // console.log(i+1+"-"+bal.network+":"+prot.protocol+"\n");
-        console.log(element);
+        const url =`${URL_B_ZAP}protocols/${element.protocol}/balances/?${url_addresses}network=${network}&api_key=${ZAPPER_API_KEY}`
+        console.log(dex+1+"-"+network+":"+element.protocol+"\n");
+        promises.push(url)
       }
-    })
-    console.log(promises);
-
+    }
     const response = await Promise.all(promises)
-    return balances.data;
+    return response;
   }
 };
