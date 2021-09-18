@@ -104,20 +104,25 @@ module.exports = {
       return a;
     }, {})
     const array_results = new Array;
-    const array_global = [0,0,0];
+    const array_global = [0, 0, 0];
     const keys = Object.keys(res);
     keys.forEach((key, index) => {
+      var exist = false;
       payment.map((pay) => {
         if ((pay.Year).toString() + "/" + (pay.Month).toString() === key) {
-          array_results[index] = {"fecha":key,"retiros": res[key], "sueldos": parseInt(pay.Amount), "resultado": parseInt(pay.Amount) - res[key] }
-          array_global[0]+=res[key];
-          array_global[1]+=parseInt(pay.Amount);
-          array_global[2]+=parseInt(pay.Amount) - res[key];
+          array_results[index] = { "fecha": key, "retiros": res[key], "sueldos": parseInt(pay.Amount), "resultado": parseInt(pay.Amount) - res[key] }
+          array_global[0] += res[key];
+          array_global[1] += parseInt(pay.Amount);
+          array_global[2] += parseInt(pay.Amount) - res[key];
+          exist = true;
         }
       })
+      if(!exist){
+        array_results[index] = { "fecha": key, "retiros": res[key], "sueldos": 0, "resultado": res[key] }
+      }
     });
-    const obj_global={"retiros":array_global[0],"sueldos":array_global[1],"resultados":array_global[2]}
-    const obj_final={"detalle":array_results,"global":obj_global}
+    const obj_global = { "retiros": array_global[0], "sueldos": array_global[1], "resultados": array_global[2] }
+    const obj_final = { "detalle": array_results, "global": obj_global }
     return obj_final;
   }
 };

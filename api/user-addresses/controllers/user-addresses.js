@@ -33,7 +33,6 @@ module.exports = {
         const element = protocols[index];
         //for protocol in protocols
         const url =`${URL_B_ZAP}protocols/${element.protocol}/balances/?${url_addresses}network=${network}&api_key=${ZAPPER_API_KEY}`
-        console.log(dex+1+"-"+network+":"+element.protocol+"\n");
         promises.push(url)
       }
     }
