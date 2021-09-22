@@ -23,15 +23,20 @@ module.exports = {
     info.Addresses.forEach(element => {
       url_addresses+=`addresses%5B%5D=${element}&`
     });
-    const url = `${URL_B_ZAP}?${url_addresses}network=ethereum&api_key=${ZAPPER_API_KEY}`
-    const balances = await axios.get(url)     
-    const totalbalance=()=>{
-      let total= 0;
-      for (let index = 0; index < Object.keys(balances.data).length; index++) {
-        total+=Object.entries(balances.data)[index][1]['meta'][0]['value'];
+    const url = `${URL_B_ZAP}protocols/balances/supported?${url_addresses}&api_key=${ZAPPER_API_KEY}`
+    const balances = await axios.get(url)
+    const {data}= balances
+    const promises = new Array
+    for (let dex = 0; dex < data.length; dex++){
+      const {network,protocols}  = data[dex]
+      for (let index = 0; index < protocols.length; index++){
+        const element = protocols[index];
+        //for protocol in protocols
+        const url =`${URL_B_ZAP}protocols/${element.protocol}/balances/?${url_addresses}network=${network}&api_key=${ZAPPER_API_KEY}`
+        promises.push(url)
       }
-      return total
     }
-    return totalbalance();
+    const response = await Promise.all(promises)
+    return response;
   }
 };
